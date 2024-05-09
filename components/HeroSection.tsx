@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa6';
+import ParticlesContainer from './ui/ParticlesContainer';
 
 
 
@@ -47,7 +48,9 @@ const HeroSection = () => {
             <Link href={"#nosotros"}>
                 <Image alt='scroll' width={200} height={150} src="/img/scroll-indicator.gif" className='z-20 absolute bottom-0 right-1/2 translate-x-1/2 invert mix-blend-screen' />
             </Link>
-            <div className='absolute bottom-0 w-full h-1/4 z-10 bg-blue-500'></div>
+            <div className='absolute bottom-0 w-full h-1/4 z-10'>
+                <ParticlesContainer />
+            </div>
         </section>
     );
 };
