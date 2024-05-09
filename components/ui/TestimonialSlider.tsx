@@ -35,7 +35,7 @@ const testimonials: TestimonialItem[] = [
     },
 ]
 
-export default function App() {
+export default function TestimonialSlider() {
     const pagination = {
         clickable: true,
         renderBullet: function (_: number, className: string) {
