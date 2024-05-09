@@ -55,7 +55,7 @@ export default function App() {
 
             >
                 {testimonials.map(testimonial => (
-                    <SwiperSlide>
+                    <SwiperSlide key={testimonial.name}>
                         <Testimonial img={testimonial.img} name={testimonial.name} quote={testimonial.quote} role={testimonial.role} key={testimonial.name} />
                     </SwiperSlide>
                 ))}

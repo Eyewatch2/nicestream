@@ -27,7 +27,7 @@ const HeroSection = () => {
             <div className='max-w-screen-xl px-10 py-4 mx-auto flex flex-col gap-10 items-center justify-center h-[calc(100%-(2.5rem+5em))] md:h-auto md:items-stretch'>
                 <div className='flex justify-between'>
                     <div className='text-center md:text-start'>
-                        <h2 className='text-lg md:text-4xl uppercase tracking-[0.8rem] font-[100]'>It's Time To</h2>
+                        <h2 className='text-lg md:text-4xl uppercase tracking-[0.8rem] font-[100]'>It&apos;s Time To</h2>
                         <div className='w-fit bg-gradient-to-t from-[#93959a] to-white bg-clip-text'>
                             <h1 className='text-6xl md:text-8xl font-black text-transparent tracking-wider'>MAKE IT
                                 <span className='block'>SOCIAL</span>
