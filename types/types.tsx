@@ -4,3 +4,10 @@ export type TestimonialItem = {
     name: string,
     role: string
 };
+
+export type ClientSliderItem = {
+    src: string
+    name: string
+    height: number
+    width: number
+}
