@@ -22,8 +22,8 @@ const navItems = [
 const Header = () => {
     return (
         <header className='py-10 text-white max-w-screen-xl mx-auto flex justify-between absolute z-50 top-0 left-1/2 -translate-x-1/2 w-svw'>
-            <Link href={"/"} className='mx-auto md:ml-0'>
-                <Image width={150} height={40} src={"/img/logo.svg"} alt='Nicestream' />
+            <Link href={"/"} scroll className='mx-auto md:ml-0'>
+                <Image width={150} height={34} src={"/img/logo.svg"} alt='Nicestream' />
             </Link>
             <ul className='gap-5 items-center hidden md:flex'>
                 {navItems.map((item) => (
@@ -31,7 +31,7 @@ const Header = () => {
                     before:absolute before:w-0 before:h-px before:bottom-0 
                     px-2 py-4 before:left-0 z-10 before:hover:w-full before:-z-10 h-full relative 
                     before:hover:h-full before:bg-primary-500' key={item.label}>
-                        <Link href={item.href} className='py-4 px-2'>{item.label}</Link>
+                        <Link href={item.href} scroll={item.href.startsWith("#")} className='py-4 px-2'>{item.label}</Link>
                     </li>
                 ))}
 

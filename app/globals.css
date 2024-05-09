@@ -72,3 +72,7 @@ body {
 .atropos-highlight {
   background-image: radial-gradient(circle at 50%, rgba(255, 255, 255, 0.5), transparent 50%) !important;
 }
+
+.swiper-pagination {
+  position: static !important;
+}

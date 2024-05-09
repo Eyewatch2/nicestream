@@ -45,7 +45,7 @@ const HeroSection = () => {
                 </Link>
             </div>
             <Link href={"#nosotros"}>
-                <Image alt='scroll' width={200} height={200} src="/img/scroll-indicator.gif" className='absolute bottom-0 right-1/2 translate-x-1/2 invert mix-blend-screen' />
+                <Image alt='scroll' width={200} height={150} src="/img/scroll-indicator.gif" className='absolute bottom-0 right-1/2 translate-x-1/2 invert mix-blend-screen' />
             </Link>
         </section>
     );

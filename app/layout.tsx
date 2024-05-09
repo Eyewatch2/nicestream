@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Archivo } from "next/font/google";
 import "./globals.css";
+import 'swiper/css';
+
 import Header from "@/components/Header";
 
 const archivo = Archivo({ subsets: ["latin"] });
