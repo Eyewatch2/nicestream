@@ -42,7 +42,7 @@ const AboutSection = () => {
         <div className='flex w-full flex-wrap max-w-screen-xl justify-between'>
           {
             sedes.map((sede) => (
-              <Atropos rotateYInvert rotateXInvert shadow={false} className="w-1/2 md:w-1/4 mx-auto">
+              <Atropos key={sede.label} rotateYInvert rotateXInvert shadow={false} className="w-1/2 md:w-1/4 mx-auto">
                 <div className="atropos-content p-8 relative">
                   <Image alt={`Ubicación de la sede de Nicestream en ${sede.label}`} className='mx-auto md:w-full' src={sede.img} width={317} height={418} />
                   <div data-atropos-offset="30" className='-mt-2 md:-mt-8'>
