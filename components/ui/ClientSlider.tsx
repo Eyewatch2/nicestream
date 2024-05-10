@@ -78,7 +78,7 @@ const ClientSlider = () => {
                 pagination={pagination}
                 modules={[Pagination]}
                 autoplay={{ delay: 2000, pauseOnMouseEnter: true }}
-                loop={true}
+                loop={false}
             >
                 {slides}
             </Swiper>

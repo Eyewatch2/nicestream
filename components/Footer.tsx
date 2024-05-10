@@ -6,7 +6,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa6';
 
 const socials = [
     {
-        icon: <FaFacebookF className='text-3xl' />,
+        icon: <FaFacebookF className='text-3xl scale-90' />,
         href: "https://www.facebook.com/nicestream"
     },
     {
@@ -23,13 +23,13 @@ const Footer = () => {
     const currentYear = new Date().getFullYear()
     return (
         <footer className='h-32 flex flex-col justify-center items-center text-black gap-3'>
-            <p className='text-lg'>
+            <p className='text-lg text-center'>
                 © Todos los derechos reservados - {currentYear}. Desarrollado por {" "}
-                <Link className='text-primary-500 hover:text-primary-400 transition' href={"https://nicestream.com"}>
+                <Link className='text-primary-500 hover:text-primary-400 transition' href={"/"}>
                     Nicestream
                 </Link>
             </p>
-            <div className='flex gap-5'>
+            <div className='hidden md:flex gap-5'>
                 {socials.map((item) => (
                     <span className='relative w-8 h-8 group'>
                         <Link key={item.href}

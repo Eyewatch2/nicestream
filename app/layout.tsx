@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Archivo } from "next/font/google";
 import "./globals.css";
 import 'swiper/css';
+import Footer from "@/components/Footer";
 
 const archivo = Archivo({ subsets: ["latin"] });
 
@@ -19,6 +20,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={archivo.className}>
         {children}
+        <Footer />
+
       </body>
     </html>
   );
