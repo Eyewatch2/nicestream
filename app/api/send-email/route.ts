@@ -18,13 +18,11 @@ export async function POST(request: Request) {
     },
   });
 
-  console.log('Sending email:', { from, name, body, phone });
-  
-
+  const destinationEmail = ["eugenia.d@nslab.me", "florencia@nsgcorp.me"]
   try {
     await transporter.sendMail({
       from: SMTP_EMAIL,
-      to: "pcarvalho@eyewatch.me",
+      to: destinationEmail.join(', '),
       subject: `Mensaje de ${name} por la web de Nicestream`,
       html: `<h1>Nuevo mensaje de ${from}</h1> </hr> </br> <p style="display: block">${body}</p> </br> </br> Teléfono: ${phone}`,
     });
