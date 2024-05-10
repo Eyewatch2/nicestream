@@ -39,9 +39,9 @@ const AboutSection = () => {
             Nos avalan más de 7 años de experiencia en estrategia de marca, investigación innovación creación de contenido.</p>
         </div>
       </div>
-      <div className='md:px-0 w-full md:w-auto py-20 mx-auto text-center'>
-        <h2 className='mb-16 text-primary-500 text-4xl tracking-widest'>NUESTRAS SEDES</h2>
-        <div className='flex w-full flex-wrap max-w-screen-xl justify-between'>
+      <div className='md:px-0 w-full py-20 mx-auto text-center'>
+        <h2 className='mb-5 text-primary-500 text-4xl tracking-widest'>NUESTRAS SEDES</h2>
+        <div className='flex w-full flex-wrap md:px-10'>
           {
             sedes.map((sede) => (
               <Atropos key={sede.label} rotateYInvert rotateXInvert shadow={false} className="w-1/2 md:w-1/4 mx-auto">
