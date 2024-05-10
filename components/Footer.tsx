@@ -31,13 +31,13 @@ const Footer = () => {
             </p>
             <div className='hidden md:flex gap-5'>
                 {socials.map((item) => (
-                    <span className='relative w-8 h-8 group'>
-                        <Link key={item.href}
+                    <span key={item.href} className='relative w-8 h-8 group'>
+                        <Link
                             className='absolute text-primary-500 group-hover:translate-x-[2px] group-hover:translate-y-[2px] footerSocialLink transition duration-300'
                             href={item.href} target='_blank'>
                             {item.icon}
                         </Link>
-                        <Link key={item.href}
+                        <Link
                             className='absolute inset-0 text-primary-500 hover:scale-110 footerSocialLink hover:text-black transition duration-300'
                             href={item.href} target='_blank'>
                             {item.icon}
