@@ -14,9 +14,9 @@ const PortfolioSection = () => {
             <div className='w-full flex justify-center'>
                 <button className='linkAnimation transition-colors duration-500 after:-z-10 before:-z-10 z-30 border hover:text-primary-500 border-primary-500 text-xl font-bold uppercase rounded-full px-12 py-4 mx-auto mt-10'>Ver Todos</button>
             </div>
-            <div className='relative z-30'>
+            <section id='contacto' className='relative pt-2 z-30'>
                 <ContactForm />
-            </div>
+            </section>
         </div>
     );
 };

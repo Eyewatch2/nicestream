@@ -26,7 +26,7 @@ const Header = () => {
                 <Image width={150} height={34} src={"/img/logo.svg"} alt='Nicestream' />
             </Link>
             <ul className='gap-5 items-center hidden md:flex'>
-                {navItems.map((item) => {                    
+                {navItems.map((item) => {
                     return (
                         <li className='uppercase navItem font-[100]
                     before:absolute before:w-0 before:h-px before:bottom-0 

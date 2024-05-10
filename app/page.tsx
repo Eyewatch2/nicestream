@@ -17,8 +17,8 @@ export default function Home() {
         <TestimonialsSection />
         <ClientsSection />
         <PortfolioSection />
-        <Footer />
       </main>
+        <Footer />
     </>
   );
 }

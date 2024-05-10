@@ -31,7 +31,7 @@ const sedes = [
 const AboutSection = () => {
 
   return (
-    <section id='#nosotros' className='text-gray-400 flex flex-col'>
+    <section id='nosotros' className='text-gray-400 flex flex-col'>
       <div className='px-5 md:px-0 py-20 max-w-screen-lg mx-auto w-full text-center border-b border-primary-500/15'>
         <div className='max-w-3xl mx-auto'>
           <h2 className='mx-auto mb-10 text-primary-500 text-4xl tracking-widest'>NOSOTROS</h2>

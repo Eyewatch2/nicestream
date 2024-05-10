@@ -13,23 +13,13 @@ import { Pagination } from 'swiper/modules';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
-const clients: ClientSliderItem[] = [
-    { name: "Jaguar", src: "/img/clients/1.jpg", width: 255, height: 115 },
-    { name: "Jaguar", src: "/img/clients/1.jpg", width: 255, height: 115 },
-    { name: "Jaguar", src: "/img/clients/1.jpg", width: 255, height: 115 },
-    { name: "Jaguar", src: "/img/clients/1.jpg", width: 255, height: 115 },
-    { name: "Jaguar", src: "/img/clients/1.jpg", width: 255, height: 115 },
-    { name: "Jaguar", src: "/img/clients/1.jpg", width: 255, height: 115 },
-    { name: "Jaguar", src: "/img/clients/1.jpg", width: 255, height: 115 },
-    { name: "Jaguar", src: "/img/clients/1.jpg", width: 255, height: 115 },
-    { name: "Jaguar", src: "/img/clients/1.jpg", width: 255, height: 115 },
-    { name: "Jaguar", src: "/img/clients/1.jpg", width: 255, height: 115 },
-    { name: "Jaguar", src: "/img/clients/1.jpg", width: 255, height: 115 },
-    { name: "Jaguar", src: "/img/clients/1.jpg", width: 255, height: 115 },
-    { name: "Jaguar", src: "/img/clients/1.jpg", width: 255, height: 115 },
-    { name: "Jaguar", src: "/img/clients/1.jpg", width: 255, height: 115 },
-    { name: "Jaguar", src: "/img/clients/1.jpg", width: 255, height: 115 },
-];
+// Crear un array dinámico de 45 elementos
+const clients: ClientSliderItem[] = Array.from({ length: 45 }, (_, index) => ({
+    name: `Cliente ${index + 1}`,
+    src: `/img/clients/${index + 1}.jpg`,
+    width: 255,
+    height: 115,
+}));
 
 const ClientSlider = () => {
     const [clientsPerSlide, setClientsPerSlide] = useState(3);
