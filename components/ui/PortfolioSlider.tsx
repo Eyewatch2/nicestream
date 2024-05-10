@@ -31,7 +31,7 @@ export default function PortfolioSlider() {
                 effect={'coverflow'}
                 grabCursor={true}
                 centeredSlides={true}
-                slidesPerView={3}
+                slidesPerView={1.5}
                 coverflowEffect={{
                     rotate: 50,
                     stretch: 0,
@@ -75,8 +75,8 @@ export default function PortfolioSlider() {
 
 
             </Swiper>
-            <div className='swiper-button-next'></div>
-            <div className='swiper-button-prev'></div>
+            <div className='swiper-button-next lg:hover:scale-110 transition !text-primary-500'></div>
+            <div className='swiper-button-prev lg:hover:scale-110 transition !text-primary-500'></div>
         </div >
     );
 }

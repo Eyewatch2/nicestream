@@ -65,7 +65,8 @@ body {
   z-index: 2;
 }
 
-.linkAnimation:hover::before, .linkAnimation:hover::after  {
+.linkAnimation:hover::before,
+.linkAnimation:hover::after {
   top: 0
 }
 
@@ -77,7 +78,7 @@ body {
   position: static !important;
 }
 
-#tsparticles > canvas {
+#tsparticles>canvas {
   position: absolute !important;
   inset: 0;
   z-index: 0;
