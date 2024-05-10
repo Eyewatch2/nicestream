@@ -3,8 +3,6 @@ import { Archivo } from "next/font/google";
 import "./globals.css";
 import 'swiper/css';
 
-import Header from "@/components/Header";
-
 const archivo = Archivo({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,7 +18,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={archivo.className}>
-        <Header />
         {children}
       </body>
     </html>

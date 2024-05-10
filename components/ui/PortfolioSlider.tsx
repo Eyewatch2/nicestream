@@ -21,7 +21,7 @@ export default function PortfolioSlider() {
     const pagination = {
         clickable: true,
         renderBullet: function (_: number, className: string) {
-            return `<span class="!w-16 !h-1 !mt-10 !bg-white !rounded-none ${className}"></span>`;
+            return `<span class="!w-8 md:!w-16 !h-1 !bg-white !rounded-none ${className}"></span>`;
         },
     };
 

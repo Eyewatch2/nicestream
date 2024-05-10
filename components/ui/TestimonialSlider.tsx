@@ -39,7 +39,7 @@ export default function TestimonialSlider() {
     const pagination = {
         clickable: true,
         renderBullet: function (_: number, className: string) {
-            return `<span class="!w-16 !h-1 !rounded-none ${className}"></span>`;
+            return `<span class="!w-8 md:!w-16 !h-1 !rounded-none ${className}"></span>`;
         },
     };
 
