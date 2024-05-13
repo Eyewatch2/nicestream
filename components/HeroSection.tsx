@@ -4,7 +4,9 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa6';
 import ParticlesContainer from './ui/ParticlesContainer';
-import Globe from 'react-globe.gl';
+import dynamic from 'next/dynamic';
+const Globe = dynamic(() => import('react-globe.gl'), { ssr: false });
+
 import { connections } from '@/data/data';
 
 
