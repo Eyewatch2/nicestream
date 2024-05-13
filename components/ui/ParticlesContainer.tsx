@@ -22,7 +22,8 @@ const ParticlesContainer = () => {
 
   const particlesLoaded = (container?: Container): Promise<void> => {
     if (container) {
-      console.log(container);
+      console.log("Particles loaded:");
+      
     }
     return Promise.resolve();
   };

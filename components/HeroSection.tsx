@@ -1,17 +1,15 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState, MutableRefObject } from 'react';
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa6';
 import ParticlesContainer from './ui/ParticlesContainer';
 import dynamic from 'next/dynamic';
+import type { GlobeMethods } from 'react-globe.gl';
 const Globe = dynamic(() => import('react-globe.gl'), { ssr: false });
 
+
 import { connections } from '@/data/data';
-
-
-
-
 
 const socials = [
     {
@@ -30,6 +28,8 @@ const socials = [
 ]
 
 const HeroSection = () => {
+    const globeEl = useRef<GlobeMethods>();
+
     const globeTexture = '/img/hologram-map.svg';
     const dimensions = 650;
     const arcsData = connections.map(([startLat, startLng, endLat, endLng]) => ({
@@ -45,7 +45,24 @@ const HeroSection = () => {
         ]);
         return allPoints;
     });
-    const colorInterpolator = (t: number) => `rgba(37, 160, 215,${Math.sqrt(1-t)})`;
+    const colorInterpolator = (t: number) => `rgba(37, 160, 215,${Math.sqrt(1 - t)})`;
+
+    useEffect(() => {
+        const rotateGlobe = () => {
+            if (globeEl.current) {
+                console.log(globeEl.current);
+
+                // Obtiene la cámara actual y sus coordenadas
+                const currentCoordinates = globeEl.current.pointOfView();
+                // Incrementa la longitud para mover la cámara horizontalmente
+                globeEl.current.pointOfView({ lat: currentCoordinates.lat, lng: currentCoordinates.lng + 1 }, 100);
+            }
+        };
+
+        const interval = setInterval(rotateGlobe, 100);
+        return () => clearInterval(interval); // Limpia el intervalo cuando el componente se desmonta
+    }, []);
+
 
 
     return (
@@ -62,26 +79,35 @@ const HeroSection = () => {
 
                     </div>
                     <div className='w-fit absolute top-1/2 right-1/2 -translate-y-1/2 translate-x-1/2 z-10 md:static h-fit md:translate-x-0 md:-translate-y-1/4 opacity-40 md:z-30'>
-                         <Globe
-                            ringsData={points}
-                            ringAltitude={0.0015}
-                            ringColor={() => colorInterpolator}
-                            ringPropagationSpeed={0.4}
-                            ringRepeatPeriod={2000}
-                            ringMaxRadius={2}
+                        <div className='relative'>
+                            <div className='absolute w-full h-full inset-0 z-10'></div>
+                            <Globe
+                                ref={globeEl}
+                                ringsData={points}
+                                ringAltitude={0.0015}
+                                ringColor={() => colorInterpolator}
+                                ringPropagationSpeed={0.4}
+                                ringRepeatPeriod={2000}
+                                ringMaxRadius={2}
 
-                            arcsData={arcsData}
-                            arcColor={"color"}
-                            arcStroke={0.5}
-                            arcAltitudeAutoScale={0.3}
+                                arcsData={arcsData}
+                                arcColor={"color"}
+                                arcStroke={0.5}
+                                arcAltitudeAutoScale={0.3}
+                                arcDashAnimateTime={() => Math.random() * 4000 + 500}
+                                arcDashGap={1.5}
+                                arcDashInitialGap={() => Math.random() * 2}
 
-                            globeImageUrl={globeTexture}
-                            animateIn={true}
-                            waitForGlobeReady={true}
-                            backgroundColor="#00000000"
-                            width={dimensions}
-                            height={dimensions}
-                        /> 
+                                
+
+                                globeImageUrl={globeTexture}
+                                animateIn={true}
+                                waitForGlobeReady={true}
+                                backgroundColor="#00000000"
+                                width={dimensions}
+                                height={dimensions}
+                            />
+                        </div>
                     </div>
                     <ul className='md:flex hidden flex-col gap-14 '>
                         {socials.map((item) => (
@@ -99,7 +125,7 @@ const HeroSection = () => {
             <div className='absolute bottom-0 w-full h-1/4 z-10'>
                 <ParticlesContainer />
             </div>
-        </section>
+        </section >
     );
 };
 
