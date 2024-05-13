@@ -1,0 +1,21 @@
+const uruguay = [-34.8207362, -56.3765231]
+    , espania = [40.1300892, -8.2036237]
+    , chile = [-33.4724228, -70.7699159]
+    , panama = [8.6229741, -80.5572748]
+    , paraguay = [-23.1088567, -58.7154725]
+    , argentina = [-34.605329, -58.3914888]
+    , ecuador = [-1.3442276, -88.3948406]
+    , peru = [-9.1087413, -84.0644281]
+    , colombia = [4.6098017, -83.3873966]
+    , honduras = [15.2184787, -88.4537853]
+    , guatemala = [15.7166764, -92.4792816]
+    , mexico = [23.3138045, -111.6489317]
+    , usa = [36.246094, -113.7240347]
+    , bretania = [54.2386204, -6.7212187]
+    , alemania = [51.0968049, 5.9675795]
+    , francia = [46.138973, -2.4367194]
+    , italia = [41.2118219, 8.2219242]
+    , china = [34.4506815, 86.0475963]
+    , connections = [[uruguay[0], uruguay[1], espania[0], espania[1]], [espania[0], espania[1], uruguay[0], uruguay[1]], [chile[0], chile[1], uruguay[0], uruguay[1]], [panama[0], panama[1], chile[0], chile[1]], [espania[0], espania[1], panama[0], panama[1]], [uruguay[0], uruguay[1], paraguay[0], paraguay[1]], [paraguay[0], paraguay[1], uruguay[0], uruguay[1]], [paraguay[0], paraguay[1], [0], [1]], [uruguay[0], uruguay[1], argentina[0], argentina[1]], [argentina[0], argentina[1], uruguay[0], uruguay[1]], [argentina[0], argentina[1], paraguay[0], paraguay[1]], [uruguay[0], uruguay[1], ecuador[0], ecuador[1]], [ecuador[0], ecuador[1], uruguay[0], uruguay[1]], [ecuador[0], ecuador[1], argentina[0], argentina[1]], [uruguay[0], uruguay[1], peru[0], peru[1]], [peru[0], peru[1], uruguay[0], uruguay[1]], [peru[0], peru[1], ecuador[0], ecuador[1]], [uruguay[0], uruguay[1], colombia[0], colombia[1]], [colombia[0], colombia[1], uruguay[0], uruguay[1]], [colombia[0], colombia[1], peru[0], peru[1]], [uruguay[0], uruguay[1], honduras[0], honduras[1]], [honduras[0], honduras[1], uruguay[0], uruguay[1]], [honduras[0], honduras[1], colombia[0], colombia[1]], [uruguay[0], uruguay[1], guatemala[0], guatemala[1]], [guatemala[0], guatemala[1], uruguay[0], uruguay[1]], [guatemala[0], guatemala[1], honduras[0], honduras[1]], [uruguay[0], uruguay[1], mexico[0], mexico[1]], [mexico[0], mexico[1], uruguay[0], uruguay[1]], [mexico[0], mexico[1], guatemala[0], guatemala[1]], [uruguay[0], uruguay[1], usa[0], usa[1]], [usa[0], usa[1], uruguay[0], uruguay[1]], [usa[0], usa[1], mexico[0], mexico[1]], [uruguay[0], uruguay[1], bretania[0], bretania[1]], [bretania[0], bretania[1], uruguay[0], uruguay[1]], [bretania[0], bretania[1], usa[0], usa[1]], [uruguay[0], uruguay[1], alemania[0], alemania[1]], [alemania[0], alemania[1], uruguay[0], uruguay[1]], [alemania[0], alemania[1], bretania[0], bretania[1]], [uruguay[0], uruguay[1], francia[0], francia[1]], [francia[0], francia[1], uruguay[0], uruguay[1]], [francia[0], francia[1], alemania[0], alemania[1]], [uruguay[0], uruguay[1], italia[0], italia[1]], [italia[0], italia[1], uruguay[0], uruguay[1]], [italia[0], italia[1], francia[0], francia[1]], [uruguay[0], uruguay[1], china[0], china[1]], [china[0], china[1], uruguay[0], uruguay[1]], [china[0], china[1], italia[0], italia[1]]];
+
+export { connections };
