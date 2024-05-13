@@ -41,7 +41,7 @@ const AboutSection = () => {
       </div>
       <div className='md:px-0 w-full py-20 mx-auto text-center'>
         <h2 className='mb-5 text-primary-500 text-4xl tracking-widest'>NUESTRAS SEDES</h2>
-        <div className='flex w-full flex-wrap md:px-10'>
+        <div className='flex w-full max-w-screen-xl mx-auto flex-wrap md:px-10'>
           {
             sedes.map((sede) => (
               <Atropos key={sede.label} rotateYInvert rotateXInvert shadow={false} className="w-1/2 md:w-1/4 mx-auto">

@@ -47,13 +47,13 @@ const HeroSection = () => {
 
 
     return (
-        <section className='md:w-[calc(100svw-20px)] max-w-[100svw] overflow-hidden h-svh pt-[calc(2.5rem+5em)] relative bg-cover' style={{ backgroundImage: `url(/img/bg-home.jpg)` }}>
+        <section className='md:w-[calc(100svw-20px)] max-w-[100svw] overflow-hidden h-svh 2xl:h-[80svh] pt-[calc(2.5rem+5em)] relative bg-cover' style={{ backgroundImage: `url(/img/bg-home.jpg)` }}>
             <div className='max-w-screen-xl py-4 mx-auto flex flex-col gap-10 items-center justify-center h-[calc(100%-(2.5rem+5em))] md:h-auto md:items-stretch'>
                 <div className='flex justify-between max-h-64'>
                     <div className='text-center h-fit md:text-start relative z-30'>
                         <h2 className='text-lg md:text-4xl uppercase tracking-[0.8rem] font-[100]'>It&apos;s Time To</h2>
                         <div className='w-fit bg-gradient-to-t from-[#93959a] to-white bg-clip-text'>
-                            <h1 className='text-6xl md:text-8xl font-black text-transparent tracking-wider'>MAKE IT
+                            <h1 className='text-6xl md:text-8xl font-black 2xl:text-9xl 2xl:min-w-max text-transparent tracking-wider'>MAKE IT
                                 <span className='block'>SOCIAL</span>
                             </h1>
                         </div>
@@ -87,7 +87,7 @@ const HeroSection = () => {
                         ))}
                     </ul>
                 </div>
-                <Link className='w-fit linkAnimation hover:text-primary-500 transition duration-500 border border-primary-500 rounded-full px-12 py-4 text-xl font-bold' href={"#contacto"}>
+                <Link className='w-fit linkAnimation 2xl:mt-16 2xl:text-3xl hover:text-primary-500 transition duration-500 border border-primary-500 rounded-full px-12 py-4 text-xl font-bold' href={"#contacto"}>
                     <span className='z-30 relative'>HABLEMOS</span>
                 </Link>
             </div>
