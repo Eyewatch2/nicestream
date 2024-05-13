@@ -1,6 +1,6 @@
 import React from 'react'
 import ClientSlider from './ui/ClientSlider'
-import Title from './Title'
+import Title from './ui/Title'
 
 
 const ClientsSection = () => {

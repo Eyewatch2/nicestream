@@ -4,7 +4,7 @@ import React from 'react'
 import 'atropos/css'
 import Atropos from 'atropos/react';
 import Image from 'next/image';
-import Title from './Title';
+import Title from './ui/Title';
 
 const sedes = [
   {

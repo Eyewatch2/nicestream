@@ -1,6 +1,6 @@
 import React from 'react'
 import TestimonialSlider from './ui/TestimonialSlider';
-import Title from './Title';
+import Title from './ui/Title';
 
 
 const TestimonialsSection = () => {

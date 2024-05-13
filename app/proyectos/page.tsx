@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import 'atropos/css'
-import Title from '@/components/Title'
+import Title from '@/components/ui/Title'
 const proyectos = [
     {
         label: 'Nicestream',
@@ -13,31 +13,31 @@ const proyectos = [
         colorClass: 'text-[#00aae4]',
     },
     {
-        label: 'Nicestream',
+        label: 'Nicestream 2',
         img: '/img/portfolio/1.png',
         href: '/proyectos/nicestream',
         colorClass: 'text-[#00aae4]',
     },
     {
-        label: 'Nicestream',
+        label: 'Nicestream 3',
         img: '/img/portfolio/1.png',
         href: '/proyectos/nicestream',
         colorClass: 'text-[#00aae4]',
     },
     {
-        label: 'Nicestream',
+        label: 'Nicestream 4',
         img: '/img/portfolio/1.png',
         href: '/proyectos/nicestream',
         colorClass: 'text-[#00aae4]',
     },
     {
-        label: 'Nicestream',
+        label: 'Nicestream 5' ,
         img: '/img/portfolio/1.png',
         href: '/proyectos/nicestream',
         colorClass: 'text-[#00aae4]',
     },
     {
-        label: 'Nicestream',
+        label: 'Nicestream 6',
         img: '/img/portfolio/1.png',
         href: '/proyectos/nicestream',
         colorClass: 'text-[#00aae4]',
@@ -47,9 +47,9 @@ const proyectos = [
 
 const page = () => {
     return (
-        <section className=''>
+        <section className='max-w-4xl mx-auto'>
             <Title el='h1' text={"Portfolio"} />
-            <div className='grid px-5 md:px-0 md:grid-cols-4 grid-cols-2 gap-5 max-w-4xl mx-auto mb-10'>
+            <div className='grid px-5 md:px-0 md:grid-cols-4 grid-cols-2 gap-5 mb-10'>
                 {proyectos.map((project) => (
                     <Atropos key={project.label} rotateYInvert rotateXInvert shadow={false} className="my-atropos w-full mx-auto">
                         <Link href={project.href}>
