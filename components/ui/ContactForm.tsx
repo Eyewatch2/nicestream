@@ -92,6 +92,8 @@ const ContactForm = () => {
 
       if (response.ok) {
         setFormState("success");
+        console.log(response);
+        
         showToast("Mensaje enviado con éxito!", "success");
       } else {
         setFormState("error");
