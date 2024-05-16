@@ -8,7 +8,7 @@ export async function POST(request: Request) {
   const SMTP_EMAIL = process.env.SMTP_EMAIL;
   const SMTP_PASSWORD = process.env.SMTP_PASSWORD;
 
-  return NextResponse.json({ message: `${SMTP_EMAIL}` });
+  return NextResponse.json({ SMTP_EMAIL });
 
   if (!SMTP_EMAIL || !SMTP_PASSWORD) {
     return NextResponse.json({ error: 'SMTP credentials not configured' }, { status: 500 });

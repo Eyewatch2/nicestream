@@ -83,14 +83,15 @@ const ContactForm = () => {
 
     setErrorField({});
     setFormState("loading");
-    try {
+    /* try { */
       const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
-      });
-
-      if (response.ok) {
+      }).then((res) => res.json()).then((data) => console.log(data));
+      
+      
+     /*  if (response.ok) {
         setFormState("success");
         console.log(response);
         
@@ -105,7 +106,7 @@ const ContactForm = () => {
       showToast("No se pudo enviar el mensaje.", "error");
     } finally {
       setFormState("idle");
-    }
+    } */
   };
 
   const getInputClass = (field: string) => {
