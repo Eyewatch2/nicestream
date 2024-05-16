@@ -3,53 +3,48 @@ import graphqlRequest from "./graphqlRequest";
 export async function getAllPosts(category?: string) {
   let categoryFilter = '';
   if (category) {
-      categoryFilter = `(where: { categoryName: "${category}" })`;
+    categoryFilter = `(where: { categoryName: "${category}" })`;
   }
 
   const query = {
-      query: `query getAllPosts {
-          posts${categoryFilter} {
-              nodes {
-                  date
-                  slug
-                  title
-                  excerpt
-                  featuredImage {
-                      node {
-                          mediaDetails {
-                              file
-                              sizes {
-                                  sourceUrl
-                                  width
-                                  height
-                              }
-                          }
-                      }
-                  }
-                  categories {
-                      nodes {
-                          slug
-                      }
-                  }
+    query: `query getAllPosts {
+      posts${categoryFilter} {
+        nodes {
+          date
+          slug
+          title
+          excerpt
+          featuredImage {
+            node {
+              mediaDetails {
+                file
+                sizes {
+                  sourceUrl
+                  width
+                  height
+                }
               }
-              pageInfo {
-                  endCursor
-                  hasNextPage
-                  hasPreviousPage
-                  startCursor
-              }
+            }
           }
-      }`
-  };
-
-  try {
-      const resJson = await graphqlRequest(query);
-      const allPosts = resJson.data.posts;
-      return allPosts;
-  } catch (error) {
-      console.error('Error fetching all posts:', error);
-      return null; // Manejar error devolviendo null o un valor por defecto
+          categories {
+            nodes {
+              slug
+            }
+          }
+        }
+        pageInfo {
+          endCursor
+          hasNextPage
+          hasPreviousPage
+          startCursor
+        }
+      }
+    }`
   }
+
+  const resJson = await graphqlRequest(query);
+  const allPosts = resJson.data.posts;
+  return allPosts;
 }
 
 export async function getSinglePost(slug: string) {
