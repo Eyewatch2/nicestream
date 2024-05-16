@@ -4,8 +4,8 @@ const nextConfig = {
 
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'nicestreamcms.eyewatch.me',
+        protocol: 'http',
+        hostname: 'eyewatch.me',
         pathname: '**',
     },
       {
