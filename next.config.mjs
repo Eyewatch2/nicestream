@@ -1,18 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-
     remotePatterns: [
       {
-        protocol: 'http',
+        protocol: 'https',
         hostname: 'nicestreamcms.eyewatch.me',
         pathname: '**',
-    },
+      },
       {
         protocol: 'https',
-        hostname: 'maa.pfg.mybluehost.me',
-        pathname: '**',
-    },
+        hostname: 'nicestreamcms.eyewatch.me',
+        pathname: '/wp-content/uploads/**', // Ajusta el pathname si es necesario
+      },
     ],
   },
 };
