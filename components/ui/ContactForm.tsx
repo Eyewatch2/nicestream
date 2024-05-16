@@ -165,7 +165,7 @@ const ContactForm = () => {
 
         <button
           disabled={formState === "loading"}
-          className='linkAnimation transition-colors duration-500 after:-z-10 before:-z-10 z-30 border hover:text-primary-500 border-primary-500 text-xl font-bold uppercase rounded-full px-12 py-4 mx-auto mt-10'
+          className='linkAnimation disabled:cursor-not-allowed disabled:opacity-50 transition-colors duration-500 after:-z-10 before:-z-10 z-30 border hover:text-primary-500 border-primary-500 text-xl font-bold uppercase rounded-full px-12 py-4 mx-auto mt-10'
           type="submit"
           onClick={send}
         >
