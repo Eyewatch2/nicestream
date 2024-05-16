@@ -9,7 +9,6 @@ export default async function graphqlRequest(query: { query: string }) {
         method: 'POST',
         body: JSON.stringify(query)
     });
-    console.log(res);
     
     const resJson = await res.json();
     return resJson;
