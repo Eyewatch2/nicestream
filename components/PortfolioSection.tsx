@@ -2,6 +2,7 @@ import React from 'react';
 import PortfolioSlider from './ui/PortfolioSlider';
 import ContactForm from './ui/ContactForm';
 import { getHighlightedPosts } from '@/lib/posts';
+import Link from 'next/link';
 
 const PortfolioSection = async () => {
     const highlightedPosts = await getHighlightedPosts();
@@ -14,7 +15,7 @@ const PortfolioSection = async () => {
 
             </div>
             <div className='w-full flex justify-center'>
-                <button className='linkAnimation transition-colors duration-500 after:-z-10 before:-z-10 z-30 border hover:text-primary-500 border-primary-500 text-xl font-bold uppercase rounded-full px-12 py-4 mx-auto mt-10'>Ver Todos</button>
+                <Link href={"/proyectos"} className='linkAnimation transition-colors duration-500 after:-z-10 before:-z-10 z-30 border hover:text-primary-500 border-primary-500 text-xl font-bold uppercase rounded-full px-12 py-4 mx-auto mt-10'>Ver Todos</Link>
             </div>
             <section id='contacto' className='relative pt-2 z-30'>
                 <ContactForm />

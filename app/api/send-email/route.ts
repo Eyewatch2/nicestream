@@ -8,6 +8,8 @@ export async function POST(request: Request) {
   const SMTP_EMAIL = process.env.SMTP_EMAIL;
   const SMTP_PASSWORD = process.env.SMTP_PASSWORD;
 
+  return NextResponse.json({ success: `${SMTP_EMAIL}` }, { status: 200 });
+
   if (!SMTP_EMAIL || !SMTP_PASSWORD) {
     return NextResponse.json({ error: 'SMTP credentials not configured' }, { status: 500 });
   }
@@ -20,7 +22,8 @@ export async function POST(request: Request) {
     },
   });
 
-  const destinationEmail = ["eugenia.d@nslab.me", "florencia@nsgcorp.me"]
+  /* const destinationEmail = ["eugenia.d@nslab.me", "florencia@nsgcorp.me"] */
+  const destinationEmail = ["pcarvalho@eyewatch.me"]
   try {
     await transporter.sendMail({
       from: SMTP_EMAIL,
