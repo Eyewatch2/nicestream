@@ -4,10 +4,9 @@ import nodemailer from 'nodemailer';
 
 export async function POST(request: Request) {
   const { from, name, body, phone } = await request.json();
-  const { SMTP_EMAIL, SMTP_PASSWORD } = process.env;
 
-  console.log('SMTP_EMAIL', SMTP_EMAIL);
-  
+  const SMTP_EMAIL = process.env.SMTP_EMAIL;
+  const SMTP_PASSWORD = process.env.SMTP_PASSWORD;
 
   if (!SMTP_EMAIL || !SMTP_PASSWORD) {
     return NextResponse.json({ error: 'SMTP credentials not configured' }, { status: 500 });
