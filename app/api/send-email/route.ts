@@ -1,35 +1,25 @@
 // app/api/send-email/route.ts
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
 export async function POST(request: Request) {
   const { from, name, body, phone } = await request.json();
 
-  const SMTP_EMAIL = process.env.SMTP_EMAIL;
-  const SMTP_PASSWORD = process.env.SMTP_PASSWORD;
+  const RESEND_API_KEY = process.env.RESEND_API_KEY;
 
-  return NextResponse.json({ SMTP_EMAIL });
 
-  if (!SMTP_EMAIL || !SMTP_PASSWORD) {
-    return NextResponse.json({ error: 'SMTP credentials not configured' }, { status: 500 });
+  if (!RESEND_API_KEY) {
+    return NextResponse.json({ error: 'RESEND API key not configured' }, { status: 500 });
   }
+  const resend = new Resend(RESEND_API_KEY);
 
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: SMTP_EMAIL,
-      pass: SMTP_PASSWORD,
-    },
-  });
-
-  /* const destinationEmail = ["eugenia.d@nslab.me", "florencia@nsgcorp.me"] */
-  const destinationEmail = ["pcarvalho@eyewatch.me"]
+  const destinationEmail = ["pcarvalho@eyewatch.me"];
   try {
-    await transporter.sendMail({
-      from: SMTP_EMAIL,
-      to: destinationEmail.join(', '),
+    await resend.emails.send({
+      from: `${name} <nicestream@resend.dev>`,
+      to: destinationEmail,
       subject: `Mensaje de ${name} por la web de Nicestream`,
-      html: `<h1>Nuevo mensaje de ${from}</h1> </hr> </br> <p style="display: block">${body}</p> </br> </br> Teléfono: ${phone}`,
+      html: `<h1>Nuevo mensaje de ${from} por la web de nicestream</h1><hr><br><p style="display: block">${body}</p><br><br>Teléfono: ${phone || "n/a"}`,
     });
 
     return NextResponse.json({ message: 'Email sent successfully' });

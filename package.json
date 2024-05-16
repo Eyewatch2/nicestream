@@ -19,12 +19,12 @@
     "atropos": "^2.0.2",
     "graphql": "^16.8.1",
     "next": "14.2.3",
-    "nodemailer": "^6.9.13",
     "react": "^18",
     "react-dom": "^18",
     "react-globe.gl": "^2.27.2",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^5.2.1",
+    "resend": "^3.2.0",
     "swiper": "^11.1.1",
     "swiper-react": "^1.0.0"
   },
