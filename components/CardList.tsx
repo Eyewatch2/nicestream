@@ -7,7 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Posts } from '@/types/types';
 
-const UPLOAD_DIR = process.env.WORDPRESS_UPLOADS_URL;
+const UPLOAD_DIR = process.env.NEXT_PUBLIC_WORDPRESS_UPLOADS_URL;
 
 const Card = ({ posts, cols }: { posts: Posts, cols: 4 | 3 }) => {
 
