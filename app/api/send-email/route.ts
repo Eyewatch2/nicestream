@@ -14,7 +14,7 @@ export async function POST(request: Request) {
   }
   const resend = new Resend(RESEND_API_KEY);
 
-  const destinationEmail = ["pcarvalho@eyewatch.me"];
+  const destinationEmail = ["pcarvalho@eyewatch.me", "florencia@nsgcorp.me", "eugenia.d@nslab.me"];
   try {
     await resend.emails.send({
       from: `${name} <nicestream@resend.dev>`,
