@@ -6,8 +6,9 @@ import Atropos from 'atropos/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Posts } from '@/types/types';
+import { STABLES } from '@/stables';
 
-const UPLOAD_DIR = process.env.NEXT_PUBLIC_WORDPRESS_UPLOADS_URL;
+const UPLOAD_DIR = STABLES.UPLOAD_URL;
 
 const Card = ({ posts, cols }: { posts: Posts, cols: 4 | 3 }) => {
 

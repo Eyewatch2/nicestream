@@ -1,5 +1,7 @@
+import { STABLES } from "@/stables";
+
 export default async function graphqlRequest(query: { query: string }) {
-    const url = `${process.env.NEXT_PUBLIC_WORDPRESS_API_URL}/graphql`;
+    const url = `${STABLES.BASE_URL}/graphql`;
     
     const headers: { 'Content-Type': string } = { 'Content-Type': 'application/json' };
 

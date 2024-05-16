@@ -15,8 +15,9 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Posts } from '@/types/types';
 import Link from 'next/link';
+import { STABLES } from '@/stables';
 
-const UPLOAD_DIR = process.env.NEXT_PUBLIC_WORDPRESS_UPLOADS_URL;
+const UPLOAD_DIR = STABLES.UPLOAD_URL;
 
 
 export default function PortfolioSlider({ posts }: { posts: Posts }) {
