@@ -83,18 +83,15 @@ const ContactForm = () => {
 
     setErrorField({});
     setFormState("loading");
-    /* try { */
+    try {
       const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
-      }).then((res) => res.json()).then((data) => console.log(data));
-      
-      
-     /*  if (response.ok) {
+      });
+
+      if (response.ok) {
         setFormState("success");
-        console.log(response);
-        
         showToast("Mensaje enviado con éxito!", "success");
       } else {
         setFormState("error");
@@ -106,7 +103,7 @@ const ContactForm = () => {
       showToast("No se pudo enviar el mensaje.", "error");
     } finally {
       setFormState("idle");
-    } */
+    }
   };
 
   const getInputClass = (field: string) => {
@@ -167,6 +164,7 @@ const ContactForm = () => {
 
 
         <button
+          disabled={formState === "loading"}
           className='linkAnimation transition-colors duration-500 after:-z-10 before:-z-10 z-30 border hover:text-primary-500 border-primary-500 text-xl font-bold uppercase rounded-full px-12 py-4 mx-auto mt-10'
           type="submit"
           onClick={send}
