@@ -4,6 +4,6 @@ interface Stables {
 }
 
 export const STABLES: Stables = {
-    BASE_URL: "https://nicestreamcms.eyewatch.me/",
-    UPLOAD_URL: "https://nicestreamcms.eyewatch.me/wp-content/uploads/",
+    BASE_URL: "https://maa.pfg.mybluehost.me/website_4d416dd8/",
+    UPLOAD_URL: "https://maa.pfg.mybluehost.me/website_4d416dd8/wp-content/uploads/",
 }
