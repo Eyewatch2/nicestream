@@ -6,7 +6,6 @@ import PortfolioSection from "@/components/PortfolioSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 
 export default function Home() {
-  console.log(process.env.NEXT_PUBLIC_WORDPRESS_API_URL);
   
   return (
     <>
