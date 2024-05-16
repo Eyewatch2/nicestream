@@ -6,6 +6,7 @@ export async function POST(request: Request) {
   const { from, name, body, phone } = await request.json();
 
   const RESEND_API_KEY = process.env.RESEND_API_KEY;
+  
 
 
   if (!RESEND_API_KEY) {

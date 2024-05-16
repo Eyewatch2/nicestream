@@ -10,7 +10,7 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'nicestreamcms.eyewatch.me',
-        pathname: '/wp-content/uploads/**', // Ajusta el pathname si es necesario
+        pathname: '/wp-content/uploads/**',
       },
     ],
   },
