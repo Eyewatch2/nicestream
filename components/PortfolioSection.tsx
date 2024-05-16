@@ -1,14 +1,16 @@
 import React from 'react';
 import PortfolioSlider from './ui/PortfolioSlider';
 import ContactForm from './ui/ContactForm';
+import { getHighlightedPosts } from '@/lib/posts';
 
-const PortfolioSection = () => {
+const PortfolioSection = async () => {
+    const highlightedPosts = await getHighlightedPosts();
     return (
         <div className='relative w-full bg-cover py-28' style={{ backgroundImage: "url('/img/bg-galeria.png')" }}>
             <div className='absolute inset-0 z-10 bg-black opacity-25'></div>
             <div className='px-5 md:px-10 max-w-screen-lg mx-auto text-center relative z-30'>
                 <h2 className='text-primary-400 mb-5 text-4xl tracking-widest'>PORTFOLIO</h2>
-                <PortfolioSlider />
+                <PortfolioSlider posts={highlightedPosts}/>
 
             </div>
             <div className='w-full flex justify-center'>

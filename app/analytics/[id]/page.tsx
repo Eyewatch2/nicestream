@@ -1,32 +1,44 @@
+"use client"
 import Title from '@/components/ui/Title';
-import Image from 'next/image';
-import React, { Suspense } from 'react'
+import { getSinglePost } from '@/lib/posts';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'next/navigation';
+import { PostsNode } from '@/types/types';
 
-const fetchDataWithDelay = async (url: string, delay: number) => {
-    return new Promise(resolve => {
-        setTimeout(async () => {
-            const response = await fetch(url);
-            const data = await response.json();
-            resolve(data);
-        }, delay);
-    });
-};
+const Page = () => {
+    const params = useParams();
+    const { id } = params;
+    const [post, setPost] = useState<PostsNode | null>(null);
 
+    useEffect(() => {
+        const fetchPost = async () => {
+            try {
+                if (id) {
+                    const postData = await getSinglePost(id as string);
+                    setPost(postData);
+                }
 
-const page = async () => {
-    const data = await fetchDataWithDelay('https://fakestoreapi.com/products/1', 3000) as { description: string; image: string; title: string };
+            } catch (error) {
+                console.error('Error fetching post:', error);
+            }
+        };
+
+        fetchPost();
+    }, [id]);
+
+    if (!post) {
+        // Opcional: Muestra un mensaje de carga mientras se carga el post
+        return <p className='text-center'>Loading...</p>;
+    }
 
     return (
         <section>
-            <div className='max-w-4xl mx-auto flex flex-col gap-5'>
-                <Suspense fallback={<div>Loading...</div>}>
-                    <Title text={data.title} el='h1' />
-                    <Image width={400} height={500} className='mx-auto' src={data.image} alt={data.title} />
-                    <p className='text-gray-600 my-5'>{data.description}</p>
-                </Suspense>
+            <div className='max-w-4xl mx-auto flex flex-col gap-5 px-5 md:px-0'>
+                <Title text={post.title} el='h1' />
+                <div className='flex flex-col items-center text-gray-600' dangerouslySetInnerHTML={{ __html: post.content }} />
             </div>
         </section>
-    )
+    );
 }
 
-export default page
+export default Page;

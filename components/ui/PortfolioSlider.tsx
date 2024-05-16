@@ -13,11 +13,14 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import { Posts } from '@/types/types';
+import Link from 'next/link';
+
+const UPLOAD_DIR = process.env.NEXT_PUBLIC_WORDPRESS_UPLOADS_URL;
 
 
+export default function PortfolioSlider({ posts }: { posts: Posts }) {
 
-
-export default function PortfolioSlider() {
     const pagination = {
         clickable: true,
         renderBullet: function (_: number, className: string) {
@@ -59,19 +62,20 @@ export default function PortfolioSlider() {
                 }}
 
             >
+                {posts.nodes.map((post) => {
+                    const image = `${UPLOAD_DIR}/${post?.featuredImage?.node.mediaDetails.file}`;                    
+                    const slug = post.slug;
 
-                <SwiperSlide>
-                    <Image alt='Porfolio Image' width={496} height={715} src={"/img/portfolio/1.png"} />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <Image alt='Porfolio Image' width={496} height={715} src={"/img/portfolio/1.png"} />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <Image alt='Porfolio Image' width={496} height={715} src={"/img/portfolio/1.png"} />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <Image alt='Porfolio Image' width={496} height={715} src={"/img/portfolio/1.png"} />
-                </SwiperSlide>
+                    return (
+                        <SwiperSlide key={slug}>
+                            <Link href={`/proyectos/${slug}`}>
+                                <Image alt='Porfolio Image' className='w-full h-full' width={497} height={717} src={image} />
+                            </Link>
+                        </SwiperSlide>
+
+                    )
+                })}
+              
 
 
             </Swiper>
