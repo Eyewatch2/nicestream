@@ -45,7 +45,7 @@ const Header = () => {
                         )
                     })}
 
-                    <li className='uppercase font-[100] hover:scale-110 transition group duration-500'><Link href={"#contacto"} className='py-3 bg-primary-500 group-hover:bg-primary-300 transition duration-500 rounded-full px-4'>¡hablemos!</Link></li>
+                    <li className='navItem uppercase font-[100] hover:scale-110 transition group duration-500'><Link href={"#contacto"} className='py-3 bg-primary-500 group-hover:bg-primary-300 transition duration-500 rounded-full px-4'>¡hablemos!</Link></li>
                 </ul>
             </nav>
         </header>

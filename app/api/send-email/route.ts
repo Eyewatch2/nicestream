@@ -7,14 +7,13 @@ export async function POST(request: Request) {
 
   const RESEND_API_KEY = process.env.RESEND_API_KEY;
   
-
-
   if (!RESEND_API_KEY) {
     return NextResponse.json({ error: 'RESEND API key not configured' }, { status: 500 });
   }
   const resend = new Resend(RESEND_API_KEY);
 
   const destinationEmail = ["pcarvalho@eyewatch.me", "florencia@nsgcorp.me", "eugenia.d@nslab.me"];
+ 
   try {
     await resend.emails.send({
       from: `${name} <nicestream@resend.dev>`,

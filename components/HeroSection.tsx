@@ -50,14 +50,14 @@ const HeroSection = () => {
             <div className='max-w-screen-xl py-4 mx-auto flex flex-col gap-10 items-center justify-center h-[calc(100%-(2.5rem+5em))] md:h-auto md:items-stretch'>
                 <div className='flex justify-between max-h-64'>
                     <div className='text-center h-fit md:text-start relative z-30'>
-                        <h2 className='text-lg md:text-4xl uppercase tracking-[0.8rem] font-[100]'>It&apos;s Time To</h2>
-                        <div className='w-fit bg-gradient-to-t from-[#93959a] to-white bg-clip-text'>
+                        <h2 id='itsTime' className='text-lg md:text-4xl uppercase tracking-[0.8rem] font-[100]'>It&apos;s Time To</h2>
+                        <div  id='title' className='w-fit bg-gradient-to-t from-[#93959a] to-white bg-clip-text'>
                             <h1 className='text-6xl md:text-8xl font-black 2xl:text-9xl 2xl:min-w-max text-transparent tracking-wider'>MAKE IT
                                 <span className='block'>SOCIAL</span>
                             </h1>
                         </div>
                     </div>
-                    <div className='w-fit absolute top-1/2 right-1/2 -translate-y-1/2 translate-x-1/2 z-10 md:static h-fit md:translate-x-0 md:-translate-y-1/4 opacity-40 md:z-30'>
+                    <div className='w-fit absolute top-1/2 md:top-28 right-1/2 md:right-0 -translate-y-1/2 translate-x-1/2 z-10 md:translate-x-0 md:-translate-y-1/4 opacity-40 md:z-30'>
                         <div className='relative'>
                             <div className='absolute w-full h-full inset-0 z-10'></div>
                             <Globe
@@ -83,18 +83,18 @@ const HeroSection = () => {
                             />
                         </div>
                     </div>
-                    <ul className='md:flex hidden flex-col gap-14 '>
+                    <ul className='md:flex hidden flex-col gap-14 relative z-50'>
                         {socials.map((item) => (
-                            <li className='transition hover:scale-110' key={item.href}><Link target='_blank' href={item.href}>{item.icon}</Link></li>
+                            <li className='socialMediaAnimation transition hover:scale-110' key={item.href}><Link target='_blank' href={item.href}>{item.icon}</Link></li>
                         ))}
                     </ul>
                 </div>
-                <Link className='w-fit linkAnimation 2xl:mt-16 2xl:text-3xl hover:text-primary-500 transition duration-500 border border-primary-500 rounded-full px-12 py-4 text-xl font-bold' href={"#contacto"}>
+                <Link id='CTA' className='w-fit linkAnimation 2xl:mt-16 2xl:text-3xl hover:text-primary-500 transition duration-500 border border-primary-500 rounded-full px-12 py-4 text-xl font-bold' href={"#contacto"}>
                     <span className='z-30 relative'>HABLEMOS</span>
                 </Link>
             </div>
-            <Link href={"#nosotros"} scroll={false}>
-                <Image alt='scroll' unoptimized width={200} height={150} src="/img/scroll-indicator.gif" className='z-20 absolute bottom-0 right-1/2 translate-x-1/2 invert mix-blend-screen' />
+            <Link href={"#nosotros"}>
+                <Image id='scrollIndicator' alt='scroll' unoptimized width={200} height={150} src="/img/scroll-indicator.gif" className='z-20 absolute bottom-0 right-1/2 translate-x-1/2 invert mix-blend-screen' />
             </Link>
             <div className='absolute bottom-0 w-full h-1/4 z-10'>
                 <ParticlesContainer />

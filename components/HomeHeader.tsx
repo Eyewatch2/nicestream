@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useRef } from 'react'
+
 
 const navItems = [
     {
@@ -20,10 +21,11 @@ const navItems = [
 ]
 
 const Header = () => {
+
     return (
         <header className='py-10 text-white max-w-screen-xl mx-auto flex justify-between absolute z-50 top-0 left-1/2 -translate-x-1/2 w-svw'>
             <Link href={"/"} className='mx-auto md:ml-0'>
-                <Image width={150} height={34} src={"/img/logo.svg"} alt='Nicestream' />
+                <Image id='logo' width={150} height={34} src={"/img/logo.svg"} alt='Nicestream' />
             </Link>
             <ul className='gap-5 items-center hidden md:flex'>
                 {navItems.map((item) => {
@@ -37,7 +39,7 @@ const Header = () => {
                     )
                 })}
 
-                <li className='uppercase font-[100] hover:scale-110 transition group duration-500'><Link href={"#contacto"} className='py-3 bg-primary-500 group-hover:bg-primary-300 transition duration-500 rounded-full px-4'>¡hablemos!</Link></li>
+                <li className='navItem uppercase font-[100] hover:scale-110 transition group duration-500'><Link href={"#contacto"} className='py-3 bg-primary-500 group-hover:bg-primary-300 transition duration-500 rounded-full px-4'>¡hablemos!</Link></li>
             </ul>
         </header>
     )

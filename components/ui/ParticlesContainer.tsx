@@ -8,7 +8,6 @@ import { Container } from "@tsparticles/engine";
 
 const ParticlesContainer = () => {
   const [init, setInit] = useState(false);
-  const containerRef = useRef(null)
 
   // this should be run only once per application lifetime
   useEffect(() => {
@@ -21,8 +20,8 @@ const ParticlesContainer = () => {
   }, []);
 
   const particlesLoaded = (container?: Container): Promise<void> => {
-    if (container) {
-      console.log("Particles loaded:");
+    if (container && container.canvas.element) {
+      container.canvas.element.style.animation = "fadeIn 1s ease-in-out forwards";
       
     }
     return Promise.resolve();
