@@ -26,7 +26,6 @@ export default function PortfolioSlider() {
     useEffect(() => {
         const fetchPosts = async () => {
             const data = await getHighlightedPosts();
-            console.log(data);
             
             setPosts(data);
         }

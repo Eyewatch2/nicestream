@@ -88,7 +88,7 @@ export async function getSinglePost(slug: string) {
 export async function getHighlightedPosts() {
   const query = {
     query: `query getHighlightedPosts {
-            posts(where: { tag: "destacado" }) {
+            posts(where: { category: "destacado" }) {
               nodes {
                 date
                 slug
