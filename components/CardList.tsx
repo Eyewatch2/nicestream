@@ -48,10 +48,10 @@ const Card = ({ cols }: { cols: 4 | 3 }) => {
                 {image && (
                   <Image
                     alt={`Proyecto ${title}`}
-                    className='mx-auto md:w-full'
+                    className={`mx-auto md:w-full ${category === "proyectos" ? "aspect-[496/717]" : "aspect-square"} object-cover`}
                     src={image}
-                    width={category === "proyectos" ? 256 : 256}
-                    height={category === "proyectos" ? 370 : 264}
+                    width={category === "proyectos" ? 496 : 264}
+                    height={category === "proyectos" ? 717 : 264}
                   />
                 )}
               </Link>
