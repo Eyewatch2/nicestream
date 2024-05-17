@@ -34,7 +34,8 @@ const Card = ({ cols }: { cols: 4 | 3 }) => {
       <div className={`grid px-5 md:px-0 grid-cols-2 gap-5 mb-10 ${className}`}>
         {posts?.nodes.map((project) => {
 
-          const category = project.categories.nodes[0]?.slug;
+          const categoryIndex = project.categories.nodes.findIndex((category) => category.slug === categoryPath);
+          const category = project.categories.nodes[categoryIndex]?.slug;
           const title = project.title;
           const image = `${UPLOAD_DIR}/${project.featuredImage?.node?.mediaDetails?.file}`;
           const slug = project.slug;

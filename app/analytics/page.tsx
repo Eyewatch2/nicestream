@@ -12,7 +12,7 @@ const Page = async () => {
     return (
         <section className='max-w-4xl mx-auto'>
             <Title el='h1' text={"Analitycs"} />
-            <CardList cols={4} posts={posts} />
+            <CardList cols={4} />
         </section>
     );
 }
