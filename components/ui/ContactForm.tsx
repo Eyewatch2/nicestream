@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
+import Title from './Title';
 
 interface ErrorField {
   field?: string;
@@ -115,7 +116,8 @@ const ContactForm = () => {
   return (
     <div className='max-w-3xl mx-auto mt-24 px-5'>
       <Toaster position="top-center" reverseOrder={false} />
-      <h2 className='mx-auto text-center mb-10 text-primary-500 text-4xl tracking-widest'>¡HABLEMOS!</h2>
+      <Title text={"Hablemos"} el='h2' />      
+      
       <form className='flex flex-col'>
 
         <label htmlFor='from' className='sr-only'>Tu email:</label>
