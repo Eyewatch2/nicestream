@@ -13,14 +13,28 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Posts } from '@/types/types';
 import Link from 'next/link';
 import { STABLES } from '@/stables';
-
+import { useEffect, useState } from 'react';
+import { Posts } from '@/types/types';
+import { getHighlightedPosts } from '@/lib/posts';
 const UPLOAD_DIR = STABLES.UPLOAD_URL;
 
 
-export default function PortfolioSlider({ posts }: { posts: Posts }) {
+export default function PortfolioSlider() {
+    const [posts, setPosts] = useState<Posts | null>(null);
+    useEffect(() => {
+        const fetchPosts = async () => {
+            const data = await getHighlightedPosts();
+            console.log(data);
+            
+            setPosts(data);
+        }
+        fetchPosts();
+
+    }, []);
+
+
 
     const pagination = {
         clickable: true,
@@ -63,8 +77,8 @@ export default function PortfolioSlider({ posts }: { posts: Posts }) {
                 }}
 
             >
-                {posts.nodes.map((post) => {
-                    const image = `${UPLOAD_DIR}/${post?.featuredImage?.node.mediaDetails.file}`;                    
+                {posts?.nodes.map((post) => {
+                    const image = `${UPLOAD_DIR}/${post?.featuredImage?.node.mediaDetails.file}`;
                     const slug = post.slug;
 
                     return (
@@ -76,7 +90,7 @@ export default function PortfolioSlider({ posts }: { posts: Posts }) {
 
                     )
                 })}
-              
+
 
 
             </Swiper>
