@@ -44,7 +44,7 @@ export default function TestimonialSlider() {
     };
 
     return (
-        <div>
+        <div  data-animate-in>
             <Swiper
                 spaceBetween={30}
                 pagination={pagination}

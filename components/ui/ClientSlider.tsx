@@ -73,7 +73,7 @@ const ClientSlider = () => {
     }
 
     return (
-        <div>
+        <div  data-animate-in>
             <Swiper
                 pagination={pagination}
                 modules={[Pagination]}

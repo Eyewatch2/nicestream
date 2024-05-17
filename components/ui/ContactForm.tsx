@@ -116,7 +116,7 @@ const ContactForm = () => {
   return (
     <div className='max-w-3xl mx-auto mt-24 px-5'>
       <Toaster position="top-center" reverseOrder={false} />
-      <Title text={"Hablemos"} el='h2' />      
+      <Title text={"Hablemos"} el='h2' noAnimation={true} />      
       
       <form className='flex flex-col'>
 

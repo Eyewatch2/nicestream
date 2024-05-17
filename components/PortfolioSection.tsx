@@ -9,7 +9,7 @@ const PortfolioSection = () => {
         <div className='relative w-full bg-cover py-28' style={{ backgroundImage: "url('/img/bg-galeria.png')" }}>
             <div className='absolute inset-0 z-10 bg-black opacity-25'></div>
             <div className='px-5 md:px-10 max-w-screen-lg mx-auto text-center relative z-30'>
-                <Title text={"Portfolio"} el='h2' />
+                <Title text={"Portfolio"} el='h2' noAnimation={true} />
                 <PortfolioSlider />
 
             </div>

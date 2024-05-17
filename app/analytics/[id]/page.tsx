@@ -4,6 +4,7 @@ import { getSinglePost } from '@/lib/posts';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { PostsNode } from '@/types/types';
+import PostSkeleton from '@/components/ui/PostSkeleton';
 
 const Page = () => {
     const params = useParams();
@@ -28,7 +29,7 @@ const Page = () => {
 
     if (!post) {
         // Opcional: Muestra un mensaje de carga mientras se carga el post
-        return <p className='text-center'>Loading...</p>;
+        return <PostSkeleton />;
     }
 
     return (

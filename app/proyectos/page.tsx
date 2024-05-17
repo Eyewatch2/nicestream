@@ -10,7 +10,7 @@ const Page = async () => {
 
     return (
         <section className='max-w-4xl mx-auto'>
-            <Title el='h1' text={"Portfolio"} />
+            <Title el='h1' text={"Portfolio"} noAnimation={true} />
             <CardList cols={4} />
         </section>
     );

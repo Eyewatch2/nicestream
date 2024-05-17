@@ -1,12 +1,14 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa6';
 import ParticlesContainer from './ui/ParticlesContainer';
 import dynamic from 'next/dynamic';
 import { connections } from '@/data/data';
-
+import { useGSAP } from '@gsap/react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 const Globe = dynamic(() => import('react-globe.gl'), { ssr: false });
 
 const socials = [
@@ -24,7 +26,48 @@ const socials = [
     },
 ];
 
+
+
 const HeroSection = () => {
+    useGSAP(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        const titles = gsap.utils.toArray('.title_2');
+        const animateInArray = gsap.utils.toArray('[data-animate-in]');
+        const animateStagger = gsap.utils.toArray('[data-animate-stagger]');
+        animateStagger.forEach((item: any) => {
+            gsap.from(item.children, {
+                opacity: 0,
+                y: -50,
+                stagger: 0.2,
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top 70%",
+                },
+            });
+        });
+        animateInArray.forEach((item: any) => {
+            gsap.from(item, {
+                opacity: 0,
+                y: 50,
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top 80%",
+                },
+            });
+        });
+        titles.forEach((title: any) => {
+            gsap.from(title, {
+                opacity: 0,
+                y: 50,
+                scale: 0.5,
+                scrollTrigger: {
+                    trigger: title,
+                    start: "top 80%",
+                },
+            });
+        });
+
+    });
 
     const globeTexture = '/img/hologram-map.svg';
     const dimensions = 650;
@@ -51,7 +94,7 @@ const HeroSection = () => {
                 <div className='flex justify-between max-h-64'>
                     <div className='text-center h-fit md:text-start relative z-30'>
                         <h2 id='itsTime' className='text-lg md:text-4xl uppercase tracking-[0.8rem] font-[100]'>It&apos;s Time To</h2>
-                        <div  id='title' className='w-fit bg-gradient-to-t from-[#93959a] to-white bg-clip-text'>
+                        <div id='title' className='w-fit bg-gradient-to-t from-[#93959a] to-white bg-clip-text'>
                             <h1 className='text-6xl md:text-8xl font-black 2xl:text-9xl 2xl:min-w-max text-transparent tracking-wider'>MAKE IT
                                 <span className='block'>SOCIAL</span>
                             </h1>
@@ -102,5 +145,6 @@ const HeroSection = () => {
         </section>
     );
 };
+
 
 export default HeroSection;

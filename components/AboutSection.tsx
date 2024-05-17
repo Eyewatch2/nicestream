@@ -36,13 +36,15 @@ const AboutSection = () => {
       <div className='px-5 md:px-0 py-20 max-w-screen-lg mx-auto w-full text-center border-b border-primary-500/15'>
         <div className='max-w-3xl mx-auto'>
           <Title el='h2' text={"Nosotros"} />
-          <p className='mx-auto text-xl font-light  max-w-3xl'>La mayor red de oficinas de Social Big Data a lo largo de Latinoamérica y España. <br />
+          <p data-animate-in className='mx-auto text-xl font-light  max-w-3xl'>La mayor red de oficinas de Social Big Data a lo largo de Latinoamérica y España. <br />
             Nos avalan más de 7 años de experiencia en estrategia de marca, investigación innovación creación de contenido.</p>
         </div>
       </div>
       <div className='md:px-0 w-full py-20 mx-auto text-center'>
         <Title el='h2' text={"Nuestras Sedes"} />
-        <div className='flex w-full max-w-screen-xl mx-auto flex-wrap md:px-10'>
+        <div  data-animate-stagger className='flex w-full max-w-screen-xl mx-auto flex-wrap md:px-10 relative'>
+          <div className='absolute md:hidden inset-0 w-full h-full z-40'></div>
+
           {
             sedes.map((sede) => (
               <Atropos key={sede.label} rotateYInvert rotateXInvert shadow={false} className="w-1/2 md:w-1/4 mx-auto">
@@ -63,7 +65,7 @@ const AboutSection = () => {
       <div className='px-5 md:px-0 py-20 w-full max-w-screen-lg mx-auto text-center border-b border-primary-500/15'>
         <div className='max-w-3xl mx-auto'>
           <Title el='h2' text={"Mercados Internacionales"} />
-          <Image className='w-full mx-auto max-w-xl' width={621} height={124} alt='Lista de banderas: Guatemala, Ecuador, Francia, México, Panamá, Argentina, Alemania, Reino Unido, Italia, Estados Unidos, Nicaragua, China, Colombia, Perú' src={"/img/banderas.png"}></Image>
+          <Image  data-animate-in className='w-full mx-auto max-w-xl' width={621} height={124} alt='Lista de banderas: Guatemala, Ecuador, Francia, México, Panamá, Argentina, Alemania, Reino Unido, Italia, Estados Unidos, Nicaragua, China, Colombia, Perú' src={"/img/banderas.png"}></Image>
         </div>
       </div>
     </section>

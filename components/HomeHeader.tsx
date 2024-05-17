@@ -30,7 +30,7 @@ const Header = () => {
             <ul className='gap-5 items-center hidden md:flex'>
                 {navItems.map((item) => {
                     return (
-                        <li className='uppercase navItem font-[100]
+                        <li className='uppercase navItem navItemAnimated font-[100]
                     before:absolute before:w-0 before:h-px before:bottom-0 
                     px-2 py-4 before:left-0 z-10 before:hover:w-full before:-z-10 h-full relative 
                     before:hover:h-full before:bg-primary-500' key={item.label}>
