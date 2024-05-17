@@ -1,23 +1,38 @@
 "use client"
 
-import React, { Suspense } from 'react'
+import React, { Suspense, useEffect } from 'react'
 
 import Atropos from 'atropos/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Posts } from '@/types/types';
 import { STABLES } from '@/stables';
+import { usePathname } from 'next/navigation';
+import { getAllPosts } from '@/lib/posts';
 
 const UPLOAD_DIR = STABLES.UPLOAD_URL;
 
-const Card = ({ posts, cols }: { posts: Posts, cols: 4 | 3 }) => {
+const Card = ({ cols }: { cols: 4 | 3 }) => {
+  const [posts, setPosts] = React.useState<Posts | null>(null);
+  const pathname = usePathname();
+  const categoryPath = pathname.split('/')[1];
+
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const data = await getAllPosts(categoryPath);
+      setPosts(data);
+    }
+    fetchPosts();
+  }, []);
+
 
   const className = cols === 4 ? 'md:grid-cols-4' : 'md:grid-cols-3';
 
   return (
     <Suspense fallback={<p>loading</p>}>
       <div className={`grid px-5 md:px-0 grid-cols-2 gap-5 mb-10 ${className}`}>
-        {posts.nodes.map((project) => {
+        {posts?.nodes.map((project) => {
 
           const category = project.categories.nodes[0]?.slug;
           const title = project.title;
