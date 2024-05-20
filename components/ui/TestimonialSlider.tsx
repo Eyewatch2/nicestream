@@ -21,7 +21,7 @@ const testimonials: TestimonialItem[] = [
         },
         quote: "Desde hace algunos años que trabajamos nuestra estrategia digital con Nicestream, estamos muy contentos y es un placer contar con ellos, realmente son un equipo que han empujado a CAMEDUR a avanzar en la transformación digital, queremos ser una institución de referencia en el departamento y en la región en este aspecto.",
         name: "Dr. Yamandu Fernandez",
-        role: "Director Tecnico General de CAMEDUR"
+        role: "Director Técnico General de CAMEDUR"
     },
     {
         img: {
