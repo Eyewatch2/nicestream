@@ -95,7 +95,7 @@ const HeroSection = () => {
                     <div className='text-center h-fit md:text-start relative z-30'>
                         <h2 id='itsTime' className='text-lg md:text-4xl uppercase tracking-[0.8rem] font-[100]'>It&apos;s Time To</h2>
                         <div id='title' className='w-fit bg-gradient-to-t from-[#93959a] to-white bg-clip-text'>
-                            <h1 className='text-6xl md:text-8xl font-black 2xl:text-9xl 2xl:min-w-max text-transparent tracking-wider'>MAKE IT
+                            <h1 className='text-6xl md:text-8xl font-black 2xl:text-9xl min-w-max text-transparent tracking-wider'>MAKE IT
                                 <span className='block'>SOCIAL</span>
                             </h1>
                         </div>
