@@ -1,6 +1,6 @@
 "use client"
 
-import React, { Suspense, useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 import Atropos from 'atropos/react';
 import Image from 'next/image';
@@ -18,8 +18,6 @@ const Card = ({ cols }: { cols: 4 | 3 }) => {
   const pathname = usePathname();
   const categoryPath = pathname.split('/')[1];
 
-
-
   useEffect(() => {
     const fetchPosts = async () => {
       const data = await getAllPosts(categoryPath);
@@ -33,7 +31,6 @@ const Card = ({ cols }: { cols: 4 | 3 }) => {
     const tl = gsap.timeline({ defaults: { duration: 0.5 } });
     tl.from('.my-cards', { opacity: 0, y: 100, stagger: 0.1 });
   }
-
 
   const className = cols === 4 ? 'md:grid-cols-4' : 'md:grid-cols-3';
 

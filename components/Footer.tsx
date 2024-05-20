@@ -22,7 +22,7 @@ const socials = [
 const Footer = () => {
     const currentYear = new Date().getFullYear()
     return (
-        <footer className='h-32 flex flex-col justify-center items-center text-black gap-3'>
+        <footer className='md:h-32 pt-10 pb-24 flex flex-col justify-center items-center text-black gap-3'>
             <p className='text-lg text-center'>
                 © Todos los derechos reservados - {currentYear}. Desarrollado por {" "}
                 <Link className='text-primary-500 hover:text-primary-400 transition' href={"/"}>
