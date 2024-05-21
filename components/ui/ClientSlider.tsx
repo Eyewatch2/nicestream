@@ -3,12 +3,13 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { ClientSliderItem } from '@/types/types';
+import { Autoplay } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-// import required modules
+// Import required modules
 import { Pagination } from 'swiper/modules';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
@@ -41,6 +42,7 @@ const ClientSlider = () => {
         return () => window.removeEventListener('resize', updateClientsPerSlide);
     }, []);
 
+
     const pagination = {
         clickable: true,
         renderBullet: function (_: number, className: string) {
@@ -52,7 +54,7 @@ const ClientSlider = () => {
     for (let i = 0; i < clients.length; i += clientsPerSlide) {
         slides.push(
             <SwiperSlide key={i}>
-                <div className={`w-full grid gap-y-3 ${clientsPerSlide === 12 ? 'md:grid-cols-6 grid-rows-2' : 'grid-cols-3'}`}>
+                <div className={`w-full grid gap-y-3 cursor-grab ${clientsPerSlide === 12 ? 'md:grid-cols-6 grid-rows-2' : 'grid-cols-3'}`}>
                     {clients.slice(i, i + clientsPerSlide).map((client, index) => {
                         const globalIndex = i + index;
                         const addMarginTop = clientsPerSlide === 3 && globalIndex % 2 === 1;
@@ -73,12 +75,16 @@ const ClientSlider = () => {
     }
 
     return (
-        <div  data-animate-in>
+        <div data-animate-in>
             <Swiper
                 pagination={pagination}
-                modules={[Pagination]}
-                autoplay={{ delay: 2000, pauseOnMouseEnter: true }}
+                modules={[Pagination, Autoplay]}
+                autoplay={{
+                    delay: 5000,
+                    pauseOnMouseEnter: true
+                }}
                 loop={false}
+                
             >
                 {slides}
             </Swiper>

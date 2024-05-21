@@ -1,7 +1,7 @@
 "use client"
 
 // import required modules
-import { Pagination, EffectCoverflow, Navigation } from 'swiper/modules';
+import { Pagination, EffectCoverflow, Navigation, Autoplay } from 'swiper/modules';
 import Image from 'next/image';
 
 // Import Swiper React components
@@ -69,7 +69,11 @@ export default function PortfolioSlider() {
 
                 }}
                 pagination={pagination}
-                modules={[EffectCoverflow, Pagination, Navigation]}
+                autoplay={{
+                    delay: 5000,
+                    disableOnInteraction: true,
+                }}
+                modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
                 navigation={{
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
