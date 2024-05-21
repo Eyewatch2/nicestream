@@ -83,8 +83,7 @@ const ClientSlider = () => {
                     delay: 5000,
                     pauseOnMouseEnter: true
                 }}
-                loop={false}
-                
+                loop={false}  
             >
                 {slides}
             </Swiper>

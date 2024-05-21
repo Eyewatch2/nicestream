@@ -15,6 +15,7 @@ const ContactForm = () => {
     from: '',
     name: '',
     phone: '',
+    subject: '',
     body: '',
   });
 
@@ -73,6 +74,14 @@ const ContactForm = () => {
       showToast("Por favor, introduce tu nombre", "error");
       return;
     }
+    if (!form.subject) {
+      setErrorField({
+        field: "subject",
+        message: "Por favor, introduce un asunto"
+      });
+      showToast("Por favor, introduce un asunto", "error");
+      return;
+    }
     if (!form.body) {
       setErrorField({
         field: "body",
@@ -116,8 +125,8 @@ const ContactForm = () => {
   return (
     <div className='max-w-3xl mx-auto mt-24 px-5'>
       <Toaster position="top-center" reverseOrder={false} />
-      <Title text={"Hablemos"} el='h2' noAnimation={true} />      
-      
+      <Title text={"Hablemos"} el='h2' noAnimation={true} />
+
       <form className='flex flex-col'>
 
         <label htmlFor='from' className='sr-only'>Tu email:</label>
@@ -153,7 +162,17 @@ const ContactForm = () => {
           required
         />
 
-        <label htmlFor='body' className='sr-only'>Tu Mensaje:</label>
+        <label htmlFor='body' className='sr-only'>Asunto:</label>
+        <input
+          type="text"
+          name="subject"
+          className={getInputClass("subject")}
+          placeholder='Asunto'
+          value={form.subject}
+          onChange={handleChange}
+          required
+        />
+        <label htmlFor='body' className='sr-only'>Mensaje:</label>
         <textarea
           name="body"
           className={`bg-[#111622] resize-none min-h-64 border-none rounded-3xl p-4 pl-5 text-white placeholder:text-white/80 mb-4 focus:shadow-[0_0_10px_1px_#25a0cd] transition-all duration-700 hover:shadow-[0_0_10px_1px_#25a0cd] focus:outline-none ${errorField.field === "body" ? 'border border-red-500 focus:shadow-[0_0_10px_1px_#f87171] hover:shadow-[0_0_10px_1px_#f87171]' : ''
