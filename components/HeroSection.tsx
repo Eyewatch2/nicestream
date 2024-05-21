@@ -38,7 +38,7 @@ const HeroSection = () => {
             gsap.from(item.children, {
                 opacity: 0,
                 y: -50,
-                stagger: 0.2,
+                stagger: item.dataset.animateStagger || 0.2,
                 scrollTrigger: {
                     trigger: item,
                     start: "top 70%",

@@ -31,7 +31,7 @@ const sedes = [
 
 const SedesContainer = () => {
     return (
-        <div data-animate-stagger className='flex w-full max-w-screen-xl mx-auto flex-wrap md:px-10 relative'>
+        <div data-animate-stagger={0.2} className='flex w-full max-w-screen-xl mx-auto flex-wrap md:px-10 relative'>
             <div className='absolute md:hidden inset-0 w-full h-full z-40'></div>
 
             {

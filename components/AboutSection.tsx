@@ -3,6 +3,25 @@ import Image from 'next/image';
 import Title from './ui/Title';
 import SedesContainer from './ui/SedesContainer';
 
+const banderas = [
+  { "src": "/img/banderas/Argentina.png", "alt": "Argentina" },
+  { "src": "/img/banderas/Brasil.png", "alt": "Brasil" },
+  { "src": "/img/banderas/Chile.png", "alt": "Chile" },
+  { "src": "/img/banderas/Colombia.png", "alt": "Colombia" },
+  { "src": "/img/banderas/Ecuador.png", "alt": "Ecuador" },
+  { "src": "/img/banderas/Espana.png", "alt": "España" },
+  { "src": "/img/banderas/Estados_Unidos.png", "alt": "Estados Unidos" },
+  { "src": "/img/banderas/Guatemala.png", "alt": "Guatemala" },
+  { "src": "/img/banderas/Honduras.png", "alt": "Honduras" },
+  { "src": "/img/banderas/Italia.png", "alt": "Italia" },
+  { "src": "/img/banderas/Mexico.png", "alt": "México" },
+  { "src": "/img/banderas/Panama.png", "alt": "Panamá" },
+  { "src": "/img/banderas/Paraguay.png", "alt": "Paraguay" },
+  { "src": "/img/banderas/Peru.png", "alt": "Perú" },
+  { "src": "/img/banderas/Uruguay.png", "alt": "Uruguay" },
+  { "src": "/img/banderas/Venezuela.png", "alt": "Venezuela" }
+  
+]
 
 
 const AboutSection = () => {
@@ -24,7 +43,12 @@ const AboutSection = () => {
       <div className='px-5 md:px-0 py-20 w-full max-w-screen-lg mx-auto text-center border-b border-primary-500/15'>
         <div className='max-w-3xl mx-auto'>
           <Title el='h2' text={"Mercados Internacionales"} />
-          <Image data-animate-in className='w-full mx-auto max-w-xl' width={621} height={124} alt='Lista de banderas: Guatemala, Ecuador, Francia, México, Panamá, Argentina, Alemania, Reino Unido, Italia, Estados Unidos, Nicaragua, China, Colombia, Perú' src={"/img/banderas.png"}></Image>
+          <div data-animate-stagger={0.1} className='grid grid-cols-8 gap-1 max-w-xl mx-auto h-24 w-full'>
+            {banderas.map((bandera, index) => (
+              <Image className='w-full aspect-video object-cover' key={index} width={260} height={160} alt={bandera.alt} src={bandera.src} />
+            ))}
+          </div>
+
         </div>
       </div>
     </section>
