@@ -15,10 +15,11 @@ export async function POST(request: Request) {
 
 
   const emailToSend = {
-    from: `${name} <nicestream@resend.dev>`,
-    to: ["pcarvalho@eyewatch.me", "eugenia.d@nslab.me", "florencia@nsgcorp.me", "pablocarvalhogimenez@gmail.com"],
-    subject: `Mensaje de ${name} por la web de Nicestream`,
-    html: `<h1>Asunto: ${subject}</h1>
+    from: `${name} <website@nicestream.com>`,
+    to: ["pcarvalho@eyewatch.me" , "eugenia.d@nslab.me", "florencia@nsgcorp.me"],
+    subject: `${subject}`,
+    html: `<h1>Mensaje de ${name} por la web de nicestream.com</h1>
+    <h2>Asunto: ${subject}</h2>
     <h2>De: ${name} (${from})</h2>
     <hr><br>
     <p style="display: block; font-size: 18px">
