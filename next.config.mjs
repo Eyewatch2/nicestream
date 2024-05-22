@@ -14,6 +14,14 @@ const nextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/graphql',
+        destination: 'https://nicestreamcms.eyewatch.me/graphql',
+      },
+    ];
+  },
 };
 
 export default nextConfig;
