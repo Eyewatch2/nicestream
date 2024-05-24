@@ -151,12 +151,12 @@ const ContactForm = () => {
           required
         />
 
-        <label htmlFor='name' className='sr-only'>Tu Nombre:</label>
+        <label htmlFor='name' className='sr-only'>Tu nombre:</label>
         <input
           type="text"
           name="name"
           className={getInputClass("name")}
-          placeholder='Tu Nombre'
+          placeholder='Tu nombre'
           value={form.name}
           onChange={handleChange}
           required
