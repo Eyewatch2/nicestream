@@ -10,6 +10,25 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
+:root {
+  --stagger-step: 0.2s; /* Base delay step */
+}
+
+.my-card {
+  opacity: 0;
+  transform: translateY(100px);
+  animation: fromBottom 1s forwards; /* 1s duration, forwards to keep the end state */
+  animation-delay: calc(var(--stagger-step) * var(--i)); /* Calculate the delay */
+}
+
+/* Keyframes for the fade-in animation */
+@keyframes fromBottom {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

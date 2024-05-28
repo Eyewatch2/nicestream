@@ -51,7 +51,7 @@ const Card = ({ cols, posts }: { cols: 4 | 3; posts: Posts | null }) => {
         </>
       )}
 
-      {posts?.nodes.map((project) => {
+      {posts?.nodes.map((project, index) => {
         const categoryIndex = project.categories.nodes.findIndex(
           (category) => category.slug === categoryPath
         );
@@ -62,18 +62,19 @@ const Card = ({ cols, posts }: { cols: 4 | 3; posts: Posts | null }) => {
         const href = `/${category}/${slug}`;
 
         return (
-          <Atropos
+        <Atropos
             key={slug}
             rotateYInvert
             rotateXInvert
             shadow={false}
-            className="w-full mx-auto"
-          >
+            style={{ "--i": index + 1 } as React.CSSProperties}
+            className="w-full mx-auto my-card"
+        >
             <Link href={href}>
               {image && (
                 <Image
                   alt={`Proyecto ${title}`}
-                  className={`mx-auto my-cards md:w-full ${
+                  className={`mx-auto md:w-full ${
                     category === "proyectos"
                       ? "aspect-[496/717]"
                       : "aspect-square"
