@@ -3,8 +3,8 @@ import ClientsSection from "@/components/ClientsSection";
 import Header from "@/components/HomeHeader";
 import HeroSection from "@/components/HeroSection";
 import PortfolioSection from "@/components/PortfolioSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-
+/* import TestimonialsSection from "@/components/TestimonialsSection";
+ */
 export default function Home() {
   
   return (
@@ -15,7 +15,7 @@ export default function Home() {
         <main className="text-white">
           <HeroSection />
           <AboutSection />
-          <TestimonialsSection />
+          {/* <TestimonialsSection /> */}
           <ClientsSection />
           <PortfolioSection />
         </main>
