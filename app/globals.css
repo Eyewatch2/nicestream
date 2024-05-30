@@ -11,14 +11,17 @@ body {
 }
 
 :root {
-  --stagger-step: 0.2s; /* Base delay step */
+  --stagger-step: 0.2s;
+  /* Base delay step */
 }
 
 .my-card {
   opacity: 0;
   transform: translateY(100px);
-  animation: fromBottom 1s forwards; /* 1s duration, forwards to keep the end state */
-  animation-delay: calc(var(--stagger-step) * var(--i)); /* Calculate the delay */
+  animation: fromBottom 1s forwards;
+  /* 1s duration, forwards to keep the end state */
+  animation-delay: calc(var(--stagger-step) * var(--i));
+  /* Calculate the delay */
 }
 
 /* Keyframes for the fade-in animation */
@@ -106,7 +109,7 @@ body {
 .socialMediaAnimation {
   opacity: 0;
   animation: appearFromRight 0.3s ease-out forwards;
-}	
+}
 
 .socialMediaAnimation:nth-of-type(1) {
   animation-delay: 1.5s;
@@ -125,6 +128,7 @@ body {
     opacity: 0;
     transform: translateX(100px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -134,12 +138,13 @@ body {
 #scrollIndicator {
   opacity: 0;
   animation: fadeIn 0.5s ease-out forwards 2s;
-}	
+}
 
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -155,6 +160,7 @@ body {
     opacity: 0;
     transform: translateY(100px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -171,6 +177,7 @@ body {
     opacity: 0;
     transform: translateY(-100px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -187,25 +194,33 @@ body {
     opacity: 0;
     transform: translateX(100px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-.navItemAnimated {
-  opacity: 0;
-  animation: navItemAppear 0.3s ease-out forwards;
+@media screen and (min-width: 768px) {
+
+  .navItemAnimated {
+    opacity: 0;
+    animation: navItemAppear 0.3s ease-out forwards;
+  }
 }
+
 .navItem:nth-of-type(1) {
   animation-delay: 0.5s;
 }
+
 .navItem:nth-of-type(2) {
   animation-delay: 0.6s;
 }
+
 .navItem:nth-of-type(3) {
   animation-delay: 0.7s;
 }
+
 .navItem:nth-of-type(4) {
   animation-delay: 0.8s;
 }
@@ -215,6 +230,7 @@ body {
     opacity: 0;
     transform: translateY(-100%);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -223,13 +239,14 @@ body {
 
 #logo {
   transform: scale(0);
-  animation: logoAppear 0.5s cubic-bezier(.41,2.02,.4,.84) forwards;
+  animation: logoAppear 0.5s cubic-bezier(.41, 2.02, .4, .84) forwards;
 }
 
 @keyframes logoAppear {
   0% {
     transform: scale(0);
   }
+
   100% {
     transform: scale(100%);
   }

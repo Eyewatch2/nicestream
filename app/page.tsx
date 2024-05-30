@@ -6,7 +6,6 @@ import PortfolioSection from "@/components/PortfolioSection";
 /* import TestimonialsSection from "@/components/TestimonialsSection";
  */
 export default function Home() {
-  
   return (
     <>
       <div>
