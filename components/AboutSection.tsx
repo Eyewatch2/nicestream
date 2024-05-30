@@ -22,6 +22,10 @@ const banderas = [
   { src: "/img/banderas/Venezuela.png", alt: "Venezuela" },
 ];
 
+const fundationDate = new Date(2009, 0, 1); // 1 de enero de 2009
+const currentDate = new Date();
+const years = currentDate.getFullYear() - fundationDate.getFullYear()
+
 const AboutSection = () => {
   return (
     <section id="nosotros" className="text-gray-400 flex flex-col">
@@ -31,13 +35,13 @@ const AboutSection = () => {
           <p data-animate-in className="mx-auto text-xl font-light  max-w-3xl">
             La mayor red de oficinas de Social Big Data a lo largo de
             Latinoamérica y España. <br />
-            Nos avalan más de 7 años de experiencia en estrategia de marca,
+            Nos avalan más de {years} años de experiencia en estrategia de marca,
             investigación innovación creación de contenido.
           </p>
         </div>
       </div>
       <div className="md:px-0 w-full py-20 mx-auto text-center">
-        <Title el="h2" text={"Nuestras Sedes"} />
+        <Title el="h2" text={"Alcance Regional"} />
         <SedesContainer />
       </div>
 
