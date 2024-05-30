@@ -28,7 +28,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="py-10 px-5 items-center bg-primary-950 md:bg-transparent text-white max-w-screen-xl mx-auto flex justify-between fixed md:absolute z-50 top-0 left-1/2 -translate-x-1/2 w-svw">
+      <header className="py-10 px-5 items-center bg-[#111622] md:bg-transparent text-white max-w-screen-xl mx-auto flex justify-between fixed md:absolute z-50 top-0 left-1/2 -translate-x-1/2 w-svw">
         <Link href={"/"} className="md:ml-0 z-[100]">
           <Image
             id="logo"
@@ -51,7 +51,7 @@ const Header = () => {
             />
           )}
           <ul
-            className={`gap-5 justify-center items-center h-svh md:h-auto bg-primary-950 md:bg-transparent z-50 fixed md:static top-0 w-full right-0 ${
+            className={`gap-5 justify-center items-center h-svh md:h-auto bg-[#111622] md:bg-transparent z-50 fixed md:static top-0 w-full right-0 ${
               menuOpen ? "translate-x-0" : "translate-x-full md:translate-x-0"
             } flex flex-col md:flex-row transition duration-300`}
           >
