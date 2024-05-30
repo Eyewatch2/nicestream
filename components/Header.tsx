@@ -44,7 +44,7 @@ const Header = () => {
                     )}
                 </div>
                 <ul
-                    className={`gap-5 h-svh justify-center items-center md:h-auto bg-[#111622] md:bg-transparent z-50 fixed md:static top-0 w-full right-0 ${
+                    className={`gap-5 h-svh justify-center items-center md:h-auto bg-[#111622] md:bg-transparent z-50 fixed md:static top-0 w-full md:w-fit right-0 ${
                         menuOpen ? "translate-x-0" : "translate-x-full md:translate-x-0"
                     } flex flex-col md:flex-row transition duration-300`}
                 >
