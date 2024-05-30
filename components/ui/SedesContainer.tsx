@@ -7,17 +7,17 @@ import React from "react";
 
 const sedes = [
   {
-    img: "/img/sedes/UY.png",
+    img: "/img/sedes/uy.png",
     label: "Uruguay",
     colorClass: "text-[#03A2D3]",
   },
   {
-    img: "/img/sedes/PA.png",
+    img: "/img/sedes/pa.png",
     label: "Panamá",
     colorClass: "text-[#4FAA38]",
   },
   {
-    img: "/img/sedes/CL.png",
+    img: "/img/sedes/cl.png",
     label: "Chile",
     colorClass: "text-[#CE1B7B]",
   },
@@ -27,17 +27,17 @@ const sedes = [
     colorClass: "text-[#EB883E]",
   },
   {
-    img: "/img/sedes/PE.png",
+    img: "/img/sedes/pe.png",
     label: "Perú",
     colorClass: "text-[#EA153F]",
   },
   {
-    img: "/img/sedes/PY.png",
+    img: "/img/sedes/py.png",
     label: "Paraguay",
     colorClass: "text-[#1142C1]",
   },
   {
-    img: "/img/sedes/AR.png",
+    img: "/img/sedes/ar.png",
     label: "Argentina",
     colorClass: "text-[#40F4FF]",
   },
