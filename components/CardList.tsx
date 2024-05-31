@@ -17,6 +17,9 @@ const Card = ({ cols, posts }: { cols: 4 | 3; posts: Posts | null }) => {
   const categoryPath = pathname.split("/")[1];
 
   const className = cols === 4 ? "md:grid-cols-4" : "md:grid-cols-3";
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className={`grid px-5 md:px-0 grid-cols-2 gap-5 mb-10 ${className}`}>

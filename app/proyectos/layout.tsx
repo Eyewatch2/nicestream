@@ -10,10 +10,10 @@ export default function layout({
     children: React.ReactNode
 }) {
     return (
-        <section>
+        <>
             <Header />
 
-            {children}
-        </section>
+            <div className="mt-24 md:mt-40">{children}</div>
+        </>
     )
 }

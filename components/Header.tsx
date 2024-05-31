@@ -31,7 +31,7 @@ const Header = () => {
     };
 
     return (
-        <header className='w-full px-10 py-5 text-white bg-[#111622] mb-10 fixed top-0 left-0 right-0 z-50'>
+        <header className='w-full px-10 py-5 text-white bg-[#111622] fixed top-0 left-0 right-0 z-50'>
             <nav className='flex max-w-screen-xl mx-auto justify-between items-center'>
                 <Link href={"/"} className='z-[100]'>
                     <Image width={150} height={34} src={"/img/logo.svg"} alt='Nicestream' />

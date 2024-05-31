@@ -10,7 +10,7 @@ const Page = async () => {
   revalidatePath("/analytics");
 
   return (
-    <section className="max-w-4xl mx-auto">
+    <section className="max-w-4xl mx-auto mt-24">
       <Title el="h1" text={"Analitycs"} />
       <CardList cols={3} posts={posts} />
     </section>
