@@ -14,8 +14,8 @@ import { Pagination } from 'swiper/modules';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
-// Crear un array dinámico de 45 elementos
-const clients: ClientSliderItem[] = Array.from({ length: 55 }, (_, index) => ({
+// Crear un array dinámico de 56 elementos
+const clients: ClientSliderItem[] = Array.from({ length: 56 }, (_, index) => ({
     name: `Cliente ${index + 1}`,
     src: `/img/clients/${index + 1}.jpg`,
     width: 255,
