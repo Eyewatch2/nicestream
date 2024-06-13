@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   keywords: "Social Big Data, Latinoamérica, España, Estrategia de marca, Creación de contenido, Social media analytics, Big data analytics, Marketing digital, Análisis de datos, Desarrollo de marca, Marketing en redes sociales, Analytics avanzado, Tendencias de merca, Nicestream, Social Big Data, investigación, innovación, creación de contenido",
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
