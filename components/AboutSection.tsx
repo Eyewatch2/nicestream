@@ -36,7 +36,7 @@ const AboutSection = () => {
             La mayor red de oficinas de Social Big Data a lo largo de
             Latinoamérica y España. <br />
             Nos avalan más de {years} años de experiencia en estrategia de marca,
-            investigación innovación creación de contenido.
+            investigación, innovación y creación de contenido.
           </p>
         </div>
       </div>
