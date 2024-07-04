@@ -14,6 +14,15 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/webmail',
+        destination: 'https://webmail.nicestream.com.uy', 
+        permanent: true,
+      },
+    ];
+  },
   async rewrites() {
     return [
       {
