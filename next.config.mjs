@@ -18,7 +18,7 @@ const nextConfig = {
     return [
       {
         source: '/webmail',
-        destination: 'https://webmail.nicestream.com.uy', 
+        destination: 'https://box5515.bluehost.com:2096/',
         permanent: true,
       },
     ];
