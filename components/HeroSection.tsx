@@ -92,7 +92,7 @@ const HeroSection = () => {
 
   return (
     <section
-      className="md:w-[calc(100svw-20px)] max-w-[100svw] overflow-hidden h-svh 2xl:h-[80svh] pt-[calc(2.5rem+5em)] relative bg-cover"
+      className="md:w-[calc(100svw-20px)] min-h-fit max-w-[100svw] overflow-hidden h-svh 2xl:h-[80svh] pt-[calc(2.5rem+5em)] relative bg-cover"
       style={{ backgroundImage: `url(/img/bg-home.jpg)` }}
     >
       <div className="max-w-screen-xl py-4 mx-auto flex flex-col gap-10 items-center justify-center h-[calc(100%-(2.5rem+5em))] md:h-auto md:items-stretch">
