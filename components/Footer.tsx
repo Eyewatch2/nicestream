@@ -11,14 +11,14 @@ const socials = [
     },
     {
         icon: <FaInstagram className='text-3xl' />,
-        href: "https://www.instagram.com/nicestream/?hl=es"
+        href: "https://www.instagram.com/nsgroup.uy/"
     },
     {
         icon: <FaLinkedinIn className='text-3xl' />,
-        href: "https://www.linkedin.com/company/nicestreamdigital/"
+        href: "https://www.linkedin.com/company/nicestream"
     },
-
 ]
+
 const Footer = () => {
     const currentYear = new Date().getFullYear()
     return (
