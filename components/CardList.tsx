@@ -55,12 +55,13 @@ const Card = ({ cols, posts }: { cols: 4 | 3; posts: Posts | null }) => {
       )}
 
       {posts?.nodes.map((project, index) => {
+        console.log(project)
         const categoryIndex = project.categories.nodes.findIndex(
           (category) => category.slug === categoryPath
         );
         const category = project.categories.nodes[categoryIndex]?.slug;
         const title = project.title;
-        const image = `${UPLOAD_DIR}/${project.featuredImage?.node?.mediaDetails?.file}`;
+        const image = project.featuredImage?.node?.mediaDetails?.sizes[0]?.sourceUrl;
         const slug = project.slug;
         const href = `/${category}/${slug}`;
 
