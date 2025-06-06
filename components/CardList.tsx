@@ -60,7 +60,7 @@ const Card = ({ cols, posts }: { cols: 4 | 3; posts: Posts | null }) => {
         );
         const category = project.categories.nodes[categoryIndex]?.slug;
         const title = project.title;
-        const image = project.featuredImage?.node?.mediaDetails?.sizes[0]?.sourceUrl;
+        const image = project.featuredImage?.node?.mediaDetails?.sizes[0]?.sourceUrl || "/img/bg-galeria.png";
         const slug = project.slug;
         const href = `/${category}/${slug}`;
 

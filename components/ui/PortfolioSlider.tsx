@@ -81,16 +81,23 @@ export default function PortfolioSlider() {
 
             >
                 {posts?.nodes.map((post) => {
-                    const image = post?.featuredImage?.node.mediaDetails.sizes[0].sourceUrl;
+                    const image = post?.featuredImage?.node.mediaDetails.sizes[0].sourceUrl || "/img/bg-galeria.png";
                     const slug = post.slug;
 
                     return (
                         <SwiperSlide key={slug}>
                             <Link href={`/proyectos/${slug}`}>
-                                <Image alt='Porfolio Image' className='w-full h-full' width={497} height={717} src={image} />
+                                {image && (
+                                    <Image 
+                                        alt='Porfolio Image' 
+                                        className='w-full h-full' 
+                                        width={497} 
+                                        height={717} 
+                                        src={image} 
+                                    />
+                                )}
                             </Link>
                         </SwiperSlide>
-
                     )
                 })}
 
