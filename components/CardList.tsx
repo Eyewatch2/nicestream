@@ -55,7 +55,6 @@ const Card = ({ cols, posts }: { cols: 4 | 3; posts: Posts | null }) => {
       )}
 
       {posts?.nodes.map((project, index) => {
-        console.log(project)
         const categoryIndex = project.categories.nodes.findIndex(
           (category) => category.slug === categoryPath
         );

@@ -81,7 +81,6 @@ export default function PortfolioSlider() {
 
             >
                 {posts?.nodes.map((post) => {
-                    console.log(post)
                     const image = post?.featuredImage?.node.mediaDetails.sizes[0].sourceUrl;
                     const slug = post.slug;
 
